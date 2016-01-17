@@ -1,0 +1,23 @@
+<link rel="import" href="../../iron-selector/iron-selector.html">
+<link rel="import" href="../../paper-checkbox/paper-checkbox.html">
+
+<dom-module id="epack-multi-select">
+  <template>
+    <iron-selector selected-values="{{value}}" selectable="paper-checkbox" selected-attribute="checked" multi>
+      <template is="dom-repeat" items="{{options}}">
+        <paper-checkbox>{{item}}</paper-checkbox>
+        <br><br>
+      </template>
+    </iron-selector>
+  </template>
+  <script>
+    Polymer({
+      is: 'epack-multi-select',
+
+      properties: {
+        options: Array,
+        value: Array
+      }
+    });
+  </script>
+</dom-module>
